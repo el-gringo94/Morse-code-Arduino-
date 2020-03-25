@@ -4,7 +4,6 @@ int Speaker = 11;
 int ledPin = 13;
 
 int UNIT = 500;
-;
 
 void setup() {
   pinMode(Speaker, OUTPUT);
