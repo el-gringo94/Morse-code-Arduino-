@@ -4,6 +4,7 @@ int Speaker = 11;
 int ledPin = 13;
 
 int UNIT = 500;
+;
 
 void setup() {
   pinMode(Speaker, OUTPUT);
@@ -38,9 +39,9 @@ void encode(char c) {
 
     case 'b':
       lang();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 3; i++) {
+        kurz();
+      }
       break;
 
     case 'c':
@@ -74,10 +75,9 @@ void encode(char c) {
       break;
 
     case 'h':
-      kurz();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 4; i++) {
+        kurz();
+      }
       break;
 
     case 'i':
@@ -87,9 +87,9 @@ void encode(char c) {
 
     case 'j':
       kurz();
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 3; i++) {
+        lang();
+      }
       break;
 
     case 'k':
@@ -116,9 +116,9 @@ void encode(char c) {
       break;
 
     case 'o':
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 3; i++) {
+        lang();
+      }
       break;
 
     case 'p':
@@ -142,9 +142,9 @@ void encode(char c) {
       break;
 
     case 's':
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 3; i++) {
+        kurz();
+      }
       break;
 
     case 't':
@@ -158,9 +158,9 @@ void encode(char c) {
       break;
 
     case 'v':
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 3; i++) {
+        kurz();
+      }
       lang();
       break;
 
@@ -193,78 +193,72 @@ void encode(char c) {
 
     case '1':
       kurz();
-      lang();
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 4; i++) {
+        lang();
+      }
       break;
 
     case '2':
       kurz();
       kurz();
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 3; i++) {
+        lang();
+      }
       break;
 
     case '3':
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 3; i++) {
+        kurz();
+      }
       lang();
       lang();
       break;
 
     case '4':
-      kurz();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 4; i++) {
+        kurz();
+      }
       lang();
       break;
 
     case '5':
-      kurz();
-      kurz();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 5; i++) {
+        kurz();
+      }
       break;
 
     case '6':
       lang();
-      kurz();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 4; i++) {
+        kurz();
+      }
       break;
 
     case '7':
       lang();
       lang();
-      kurz();
-      kurz();
-      kurz();
+      for (int i = 0; i < 3; i++) {
+        kurz();
+      }
       break;
 
     case '8':
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 3; i++) {
+        lang();
+      }
       kurz();
       kurz();
       break;
 
     case '9':
-      lang();
-      lang();
-      lang();
-      lang();
+      for (int i = 0; i < 4; i++) {
+        lang();
+      }
       kurz();
       break;
 
     case '0':
-      for (int i = 0; i<5; i++){
+      for (int i = 0; i < 5; i++) {
         lang();
       }
       break;
@@ -281,9 +275,9 @@ void encode(const char *c) {
 }
 
 void loop() {
-  if(Serial.available() > 0){
+  if (Serial.available() > 0) {
     char in = Serial.read();
-    if(in != -1){
+    if (in != -1) {
       encode(in);
       Serial.print(in);
     }
